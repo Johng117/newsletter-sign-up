@@ -16,18 +16,18 @@ body {
   min-height: 100vh;
   font-family: "Roboto", serif;
   box-sizing: border-box;
+  background-color: var(--blue-800);
 }
 
 body {
-  background-color: var(--blue-800);
-  height: 100%;
+  
 }
 
 main {
   width: 375px;
   margin: auto;
-  background-color: var(--blue-800);
-  min-height: 99vh;
+  background-color: var(--white);
+  height: 95vh;
   display: flex;
   flex-direction: column;
   color: var(--blue-800);
