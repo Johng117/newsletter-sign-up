@@ -20,10 +20,12 @@
   </head>
   <body>
     <main>
-      <img
-        src="./assets/images/illustration-sign-up-mobile.svg"
-        alt="illustration for mobile version of sign-in page"
-      />
+      <section class="image-container">
+        <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="illustration for mobile version of sign-in page"
+        />
+      </section>
       <section class="newsletter-information">
         <h1 class="heading-text">Stay updated!</h1>
         <h5>Join 60,000+ product managers receiving monthly updates on:</h5>
@@ -43,7 +45,11 @@
         </ul>
       </section>
       <section class="email-submit">
-        <input>
+        <form class="form">
+          <label for="email" class="email-label">Email address:</label><br />
+          <input type="email" id="email" name="email" class="email" placeholder="email@company.com"/><br />
+          <button class="email-submit-button">Subscribe to monthly newsletter</button>
+        </form>
       </section>
     </main>
     <footer></footer>
