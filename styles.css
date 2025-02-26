@@ -143,4 +143,14 @@ li p {
   cursor: pointer;
 }
 
+.success {
+  display: none;
+  border: 1px solid red;
+  height: 887px;
+  background: var(--white);
+}
 
+.success img {
+
+  margin: 175px 0 0 30px;
+}
