@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    
+    <script src="./main.js" type="text/javascript" defer></script>
     <title>Newsletter sign up</title>
   </head>
   <body>
@@ -47,12 +47,23 @@
       </section>
       <section class="email-submit">
         <form class="form">
-          <label for="email" class="email-label">Email address:</label><br />
-          <input type="email" id="email" name="email" class="email" placeholder="email@company.com"/><br />
-          <button class="email-submit-button">Subscribe to monthly newsletter</button>
+          <div class="email-address-error-container">
+            <label for="email" class="email-label">Email address:</label><br />
+            <p class="email-error-message">Valid email required</p>
+          </div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="email"
+            placeholder="email@company.com"
+            autocomplete="off"
+          /><br />
+          <button class="email-submit-button" type="reset">
+            Subscribe to monthly newsletter
+          </button>
         </form>
       </section>
     </main>
-    <script src="./main.js" type="text/javascript" async></script>
   </body>
 </html>
