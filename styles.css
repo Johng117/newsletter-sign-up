@@ -19,7 +19,6 @@ body {
   background-color: var(--blue-800);
   display: flex;
   align-items: center;
-
 }
 
 main {
@@ -148,9 +147,40 @@ li p {
   border: 1px solid red;
   height: 887px;
   background: var(--white);
+  padding: 0 30px;
 }
 
 .success img {
+  margin: 175px 0 0 0;
+}
 
-  margin: 175px 0 0 30px;
+
+.success-title {
+  font-weight: 700;
+  font-size: 42px;
+  margin: 30px 0 0 0;
+  line-height: 100%;
+}
+
+.success-advice {
+  margin: 20px 0 0 0;
+  font-weight: 500;
+  line-height: 150%;
+  color: var(--blue-700);
+}
+
+.email-strong {
+  font-weight: 900;
+}
+
+.dismiss {
+  margin: 300px 0 0 0;
+  width: 100%;
+  height: 60px;
+  background: var(--blue-800);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 7px;
+  padding-top: 7px;
 }
