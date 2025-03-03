@@ -42,7 +42,7 @@ function handleDismiss(e) {
   e.preventDefault();
   let dismissEl = document.getElementsByClassName("success")[0];
   dismissEl.style.display = "none";
-  for(let i=0; i<=2; i++) {
+  for(let i=0; i<=3; i++) {
     sectionEls[i].style.display="block";
   }
 }
