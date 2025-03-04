@@ -34,8 +34,9 @@ function handleButtonClick(e) {
       element.style.display = "none";
     }
     successEl.style.display = "block";
-    input.value="";
   }
+  input.value="";
+  textValue = "";
 }
 
 function handleDismiss(e) {
