@@ -145,9 +145,10 @@ li {
   cursor: pointer;
 }
 
-.email-submit-button:hover {
-  background: linear-gradient(to right, hsl(4, 100%, 67%), orange);
+.email-submit-button:focus {
+  background:  hsl(4, 100%, 67%);
   border: 1px solid hsl(4, 100%, 67%);
+  box-shadow: hsl(4, 100%, 67%) 0px 5px 20px 0px;
 }
 
 .success {

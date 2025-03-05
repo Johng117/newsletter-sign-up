@@ -22,29 +22,31 @@ function handleInput(e) {
 
 function handleButtonClick(e) {
   e.preventDefault();
-  if (textValue.length < 1 || re.test(textValue) === false) {
-    errorText.style.display = "block";
-    errorText.style.color = errorStateColor;
-    input.style.color = errorStateColor;
-    input.style.border = `3px solid ${errorStateColor}`;
-    input.style.background = "hsl(4, 100%, 95%)";
-  } else {
-    let successEl = document.getElementsByClassName("success")[0];
-    for(element of sectionEls) {
-      element.style.display = "none";
+  setTimeout(() => {
+    if (textValue.length < 1 || re.test(textValue) === false) {
+      errorText.style.display = "block";
+      errorText.style.color = errorStateColor;
+      input.style.color = errorStateColor;
+      input.style.border = `3px solid ${errorStateColor}`;
+      input.style.background = "hsl(4, 100%, 95%)";
+    } else {
+      let successEl = document.getElementsByClassName("success")[0];
+      for (element of sectionEls) {
+        element.style.display = "none";
+      }
+      successEl.style.display = "block";
     }
-    successEl.style.display = "block";
-  }
-  input.value="";
-  textValue = "";
+    input.value = "";
+    textValue = "";
+  }, 500);
 }
 
 function handleDismiss(e) {
   e.preventDefault();
   let dismissEl = document.getElementsByClassName("success")[0];
   dismissEl.style.display = "none";
-  for(let i=0; i<=3; i++) {
-    sectionEls[i].style.display="block";
+  for (let i = 0; i <= 3; i++) {
+    sectionEls[i].style.display = "block";
   }
 }
 
