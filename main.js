@@ -1,18 +1,20 @@
-// define variables 
-let sectionEls = document.getElementsByTagName("section");
-let errorStateColor = "hsl(4, 100%, 67%)";
-let input = document.getElementById("email");
-let btn = document.getElementsByTagName("button")[0];
-let errorText = document.getElementsByClassName("email-error-message")[0];
-let dismissBtn = document.getElementsByClassName("dismiss")[0];
-let emailTextValue = "";
-let emailRegex =
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("DOM fully loaded and parsed");
+});
+
+// define variables
+const sectionEls = document.getElementsByTagName("section");
+const form = document.getElementById("form");
+const errorStateColor = "hsl(4, 100%, 67%)";
+const input = document.getElementById("email");
+const btn = document.getElementsByTagName("button")[0];
+const errorText = document.getElementsByClassName("email-error-message")[0];
+const dismissBtn = document.getElementsByClassName("dismiss")[0];
+const emailRegex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 function handleInput(e) {
   e.preventDefault();
-  emailTextValue = e.target.value;
-
   // removes error state and styles on change of input
   errorText.style.display = "none";
   input.style.color = "hsl(234, 29%, 20%)";
@@ -22,23 +24,24 @@ function handleInput(e) {
 
 function handleEmailSubmit(e) {
   e.preventDefault();
-  setTimeout(() => {
-    if (textValue.length < 1 || emailRegex.test(textValue) === false) {
-      errorText.style.display = "block";
-      errorText.style.color = errorStateColor;
-      input.style.color = errorStateColor;
-      input.style.border = `3px solid ${errorStateColor}`;
-      input.style.background = "hsl(4, 100%, 95%)";
-    } else {
-      let successEl = document.getElementsByClassName("success")[0];
-      for (element of sectionEls) {
-        element.style.display = "none";
-      }
-      successEl.style.display = "block";
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+  console.log(data);
+  
+  if (data.email.length < 1 || emailRegex.test(data.email) === false) {
+    errorText.style.display = "block";
+    errorText.style.color = errorStateColor;
+    input.style.color = errorStateColor;
+    input.style.border = `3px solid ${errorStateColor}`;
+    input.style.background = "hsl(4, 100%, 95%)";
+  } else {
+    let successEl = document.getElementsByClassName("success")[0];
+    for (element of sectionEls) {
+      element.style.display = "none";
     }
+    successEl.style.display = "block";
     input.value = "";
-    textValue = "";
-  }, 500);
+  }
 }
 
 function handleDismiss(e) {
@@ -51,5 +54,5 @@ function handleDismiss(e) {
 }
 
 input.addEventListener("input", handleInput);
-btn.addEventListener("click", handleEmailSubmit);
+form.addEventListener("submit", handleEmailSubmit);
 dismissBtn.addEventListener("click", handleDismiss);
