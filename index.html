@@ -47,7 +47,14 @@
           </ul>
         </section>
         <section class="email-submit">
-          <form class="form" id="form" novalidate>
+          <form
+            class="form"
+            id="form"
+            onkeydown="if(event.keyCode === 13) {
+            alert('You have pressed Enter key, use submit button instead'); 
+            return false; }"
+            novalidate
+          >
             <div class="email-address-error-container">
               <label for="email" class="email-label">Email address:</label
               ><br />
@@ -66,7 +73,6 @@
             </button>
           </form>
         </section>
-        
       </section>
       <section class="success">
         <img
@@ -79,7 +85,7 @@
           <strong class="email-strong">ash@loremcompany.com</strong>. Please
           open it and click the button inside to confirm your subscription.
         </p>
-        <button class="dismiss">Dismiss message</button>
+        <button class="dismiss"><h5>Dismiss message</h5></button>
       </section>
     </main>
   </body>
