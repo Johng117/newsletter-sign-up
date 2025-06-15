@@ -158,7 +158,7 @@ li {
   cursor: pointer;
 }
 
-.email-submit-button:focus {
+.email-submit-button:hover {
   background: hsl(4, 100%, 67%);
   border: 1px solid hsl(4, 100%, 67%);
   box-shadow: hsl(4, 100%, 67%) 0px 5px 20px 0px;
@@ -207,8 +207,9 @@ li {
 }
 
 .dismiss:hover {
-  background-color: linear-gradient(to right, hsl(4, 100%, 67%), orange);
+  background: hsl(4, 100%, 67%);
   border: 1px solid hsl(4, 100%, 67%);
+  box-shadow: hsl(4, 100%, 67%) 0px 5px 20px 0px;
 }
 
 @media only screen and (min-width: 1200px) {
